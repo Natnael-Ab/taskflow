@@ -1,7 +1,7 @@
 "use strict";
 
 
-import { 
+import {
     getTasks,
     setTasks
 } from "./state.js";
@@ -53,5 +53,76 @@ export function createTask(data){
 
 
     return newTask;
+
+}
+
+
+
+
+
+export function updateTask(id, updatedData){
+
+
+    const tasks = getTasks();
+
+
+
+    const task =
+        tasks.find(
+            task=>task.id===id
+        );
+
+
+
+    if(!task){
+
+        return null;
+
+    }
+
+
+
+    Object.assign(
+        task,
+        updatedData
+    );
+
+
+
+    task.updatedAt =
+        new Date().toISOString();
+
+
+
+    setTasks(tasks);
+
+
+
+    return task;
+
+}
+
+
+
+
+
+export function deleteTask(id){
+
+
+    const tasks =
+        getTasks();
+
+
+
+    const updatedTasks =
+        tasks.filter(
+            task=>task.id!==id
+        );
+
+
+
+    setTasks(updatedTasks);
+
+
 
 }
