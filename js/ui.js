@@ -17,6 +17,7 @@ function createElement(tag,className){
 
 
 
+
 function createTaskElement(task){
 
 
@@ -33,11 +34,42 @@ function createTaskElement(task){
 
 
 
+    if(task.completed){
+
+        item.classList.add(
+            "completed"
+        );
+
+    }
+
+
+
     const header =
         createElement(
             "div",
             "task-header"
         );
+
+
+
+    const checkbox =
+        createElement(
+            "input",
+            "task-checkbox"
+        );
+
+
+    checkbox.type="checkbox";
+
+
+    checkbox.checked =
+        task.completed;
+
+
+    checkbox.dataset.action =
+        "complete";
+
+
 
 
 
@@ -66,6 +98,7 @@ function createTaskElement(task){
 
 
     header.append(
+        checkbox,
         title,
         priority
     );
@@ -121,12 +154,10 @@ function createTaskElement(task){
         );
 
 
-    editButton.textContent =
-        "Edit";
+    editButton.textContent="Edit";
 
 
-    editButton.dataset.action =
-        "edit";
+    editButton.dataset.action="edit";
 
 
 
@@ -137,12 +168,10 @@ function createTaskElement(task){
         );
 
 
-    deleteButton.textContent =
-        "Delete";
+    deleteButton.textContent="Delete";
 
 
-    deleteButton.dataset.action =
-        "delete";
+    deleteButton.dataset.action="delete";
 
 
 
@@ -181,14 +210,6 @@ export function renderTasks(tasks){
 
 
     taskList.innerHTML="";
-
-
-
-    if(tasks.length===0){
-
-        return;
-
-    }
 
 
 

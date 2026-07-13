@@ -7,12 +7,16 @@ getTasks
 }
 from "./state.js";
 
-
+import {
+loadTasks
+}
+from "./storage.js";
 
 import {
 createTask,
 updateTask,
-deleteTask
+deleteTask,
+toggleTask
 }
 from "./taskManager.js";
 
@@ -43,9 +47,18 @@ document.addEventListener(
 ()=>{
 
 
-initializeState();
+const savedTasks =
+loadTasks();
 
 
+initializeState(
+savedTasks
+);
+
+
+renderTasks(
+getTasks()
+);
 
 const form =
 document.getElementById(

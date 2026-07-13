@@ -7,6 +7,7 @@ const STORAGE_KEY = "taskflow_tasks";
 
 export function saveTasks(tasks){
 
+
     localStorage.setItem(
 
         STORAGE_KEY,
@@ -15,23 +16,46 @@ export function saveTasks(tasks){
 
     );
 
+
 }
+
+
 
 
 
 export function loadTasks(){
 
-    const savedTasks =
-        localStorage.getItem(STORAGE_KEY);
+
+    const data =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
 
 
-    if(!savedTasks){
+
+    if(!data){
 
         return [];
 
     }
 
 
-    return JSON.parse(savedTasks);
+
+    return JSON.parse(data);
+
+
+}
+
+
+
+
+
+export function clearStorage(){
+
+
+    localStorage.removeItem(
+        STORAGE_KEY
+    );
+
 
 }

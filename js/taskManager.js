@@ -2,57 +2,69 @@
 
 
 import {
-    getTasks,
-    setTasks
-} from "./state.js";
+getTasks,
+setTasks
+}
+from "./state.js";
 
 
 import {
-    generateId
-} from "./utils.js";
+saveTasks
+}
+from "./storage.js";
+
+
+import {
+generateId
+}
+from "./utils.js";
 
 
 
 export function createTask(data){
 
 
-    const tasks = getTasks();
+const tasks=getTasks();
 
 
 
-    const newTask = {
+const newTask={
 
-        id: generateId(),
+id:generateId(),
 
-        title:data.title,
+title:data.title,
 
-        description:data.description,
+description:data.description,
 
-        category:data.category,
+category:data.category,
 
-        priority:data.priority,
+priority:data.priority,
 
-        dueDate:data.dueDate,
+dueDate:data.dueDate,
 
-        completed:false,
+completed:false,
 
-        createdAt:new Date().toISOString(),
+createdAt:new Date().toISOString(),
 
-        updatedAt:new Date().toISOString()
+updatedAt:new Date().toISOString()
 
-    };
-
-
-
-    tasks.push(newTask);
+};
 
 
 
-    setTasks(tasks);
+tasks.push(newTask);
 
 
 
-    return newTask;
+setTasks(tasks);
+
+
+saveTasks(tasks);
+
+
+
+return newTask;
+
 
 }
 
@@ -60,45 +72,49 @@ export function createTask(data){
 
 
 
-export function updateTask(id, updatedData){
+export function updateTask(id,data){
 
 
-    const tasks = getTasks();
-
-
-
-    const task =
-        tasks.find(
-            task=>task.id===id
-        );
+const tasks=getTasks();
 
 
 
-    if(!task){
-
-        return null;
-
-    }
-
-
-
-    Object.assign(
-        task,
-        updatedData
-    );
+const task =
+tasks.find(
+task=>task.id===id
+);
 
 
 
-    task.updatedAt =
-        new Date().toISOString();
+if(!task){
+
+return null;
+
+}
 
 
 
-    setTasks(tasks);
+Object.assign(
+task,
+data
+);
 
 
 
-    return task;
+task.updatedAt =
+new Date().toISOString();
+
+
+
+setTasks(tasks);
+
+
+saveTasks(tasks);
+
+
+
+return task;
+
 
 }
 
@@ -109,20 +125,70 @@ export function updateTask(id, updatedData){
 export function deleteTask(id){
 
 
-    const tasks =
-        getTasks();
+const tasks=getTasks();
 
 
 
-    const updatedTasks =
-        tasks.filter(
-            task=>task.id!==id
-        );
+const updatedTasks =
+tasks.filter(
+task=>task.id!==id
+);
 
 
 
-    setTasks(updatedTasks);
+setTasks(updatedTasks);
 
+
+saveTasks(updatedTasks);
+
+
+
+}
+
+
+
+
+
+export function toggleTask(id){
+
+
+const tasks=getTasks();
+
+
+
+const task =
+tasks.find(
+task=>task.id===id
+);
+
+
+
+if(!task){
+
+return null;
+
+}
+
+
+
+task.completed =
+!task.completed;
+
+
+
+task.updatedAt =
+new Date().toISOString();
+
+
+
+setTasks(tasks);
+
+
+saveTasks(tasks);
+
+
+
+return task;
 
 
 }

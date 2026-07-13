@@ -9,24 +9,34 @@ let state = {
 
 
 
-export function initializeState(){
 
-    state.tasks = [];
+export function initializeState(tasks=[]){
+
+
+    state.tasks = tasks;
+
 
 }
+
 
 
 
 export function getTasks(){
 
+
     return state.tasks;
+
 
 }
 
 
 
+
+
 export function setTasks(tasks){
 
+
     state.tasks = tasks;
+
 
 }
