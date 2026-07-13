@@ -10,7 +10,9 @@ export function renderTasks(tasks){
         );
 
 
+
     taskList.innerHTML="";
+
 
 
     tasks.forEach(task=>{
@@ -22,8 +24,13 @@ export function renderTasks(tasks){
             );
 
 
+        item.className="task-item";
+
+
+
         item.textContent =
             task.title;
+
 
 
         taskList.appendChild(item);

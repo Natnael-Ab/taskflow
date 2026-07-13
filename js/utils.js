@@ -14,3 +14,11 @@ export function cleanText(text){
     return text.trim();
 
 }
+
+
+
+export function isEmpty(value){
+
+    return value.trim()==="";
+
+}
