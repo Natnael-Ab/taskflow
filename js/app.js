@@ -1,7 +1,16 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded",()=>{
 
-console.log("TaskFlow Started");
+import { initializeState } from "./state.js";
 
-});
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        initializeState();
+
+        console.log("TaskFlow Application Started");
+
+    }
+);

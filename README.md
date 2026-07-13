@@ -1,10 +1,23 @@
 # TaskFlow
 
-TaskFlow is a modern task management application built with HTML, CSS and JavaScript.
+A modern task management application built with HTML, CSS and JavaScript.
 
-## Technology
+## Features
 
-- HTML5
-- CSS3
-- JavaScript ES6
+- Responsive design
+- Task management
+- Local storage
+- Modern UI architecture
+
+
+## Architecture
+
+JavaScript ES6 Modules:
+
+- app.js
+- state.js
+- taskManager.js
+- storage.js
+- ui.js
+- utils.js
 
