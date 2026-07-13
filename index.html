@@ -1,28 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="TaskFlow is a modern task management application built with HTML, CSS and JavaScript.">
-<meta name="keywords" content="Task Manager, To Do App, JavaScript, HTML, CSS">
-<meta name="author" content="Natty Abe">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TaskFlow</title>
+    <title>TaskFlow | Modern Task Manager</title>
 
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/variables.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/responsive.css">
+    <meta name="description"
+        content="TaskFlow is a modern task management application built using HTML, CSS and JavaScript.">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-<div id="app">
+    <div id="app">
 
-</div>
+        <!-- HEADER -->
 
-<script src="js/app.js"></script>
+        <header class="app-header">
+
+            <div class="container header-content">
+
+                <div class="logo-section">
+                    <h1 class="logo">TaskFlow</h1>
+                    <p class="tagline">
+                        Organize your work. Focus on what matters.
+                    </p>
+                </div>
+
+                <button class="theme-btn" type="button">
+                    🌙
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- MAIN -->
+
+        <main class="container">
+
+            <!-- Hero -->
+
+            <section class="hero">
+
+                <h2>
+                    Welcome Back 👋
+                </h2>
+
+                <p>
+                    Manage your daily tasks efficiently and stay productive.
+                </p>
+
+            </section>
+
+            <!-- Statistics -->
+
+            <section class="statistics">
+
+                <article class="stat-card">
+                    <h3>Total</h3>
+                    <span id="totalTasks">0</span>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Active</h3>
+                    <span id="activeTasks">0</span>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Completed</h3>
+                    <span id="completedTasks">0</span>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Progress</h3>
+                    <span id="progressValue">0%</span>
+                </article>
+
+            </section>
+
+            <!-- Create Task -->
+
+            <section class="task-form-section">
+
+                <h2>Create New Task</h2>
+
+                <form id="taskForm">
+
+                    <div class="form-group">
+
+                        <label for="taskTitle">
+                            Task Title
+                        </label>
+
+                        <input
+                            id="taskTitle"
+                            type="text"
+                            placeholder="Enter task title">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="taskDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="taskDescription"
+                            rows="4"
+                            placeholder="Task description"></textarea>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="taskCategory">
+                                Category
+                            </label>
+
+                            <select id="taskCategory">
+
+                                <option>Study</option>
+                                <option>Work</option>
+                                <option>Personal</option>
+                                <option>Shopping</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="taskPriority">
+                                Priority
+                            </label>
+
+                            <select id="taskPriority">
+
+                                <option>Low</option>
+                                <option>Medium</option>
+                                <option>High</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="taskDate">
+                            Due Date
+                        </label>
+
+                        <input
+                            id="taskDate"
+                            type="date">
+
+                    </div>
+
+                    <button
+                        class="primary-btn"
+                        type="submit">
+
+                        Add Task
+
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- Search -->
+
+            <section class="search-section">
+
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Search tasks...">
+
+            </section>
+
+            <!-- Filters -->
+
+            <section class="filter-section">
+
+                <button class="filter-btn active">
+                    All
+                </button>
+
+                <button class="filter-btn">
+                    Active
+                </button>
+
+                <button class="filter-btn">
+                    Completed
+                </button>
+
+            </section>
+
+            <!-- Task List -->
+
+            <section class="task-section">
+
+                <ul id="taskList">
+
+                </ul>
+
+            </section>
+
+            <!-- Empty State -->
+
+            <section class="empty-state">
+
+                <h2>
+                    No Tasks Yet
+                </h2>
+
+                <p>
+                    Create your first task to begin your productivity journey.
+                </p>
+
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+
+        <footer class="app-footer">
+
+            <div class="container">
+
+                <p>
+
+                    Built with HTML, CSS and JavaScript.
+
+                </p>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="js/app.js"></script>
 
 </body>
+
 </html>

@@ -1,9 +1,145 @@
-@media(max-width:768px){
+/* TASKFLOW RESPONSIVE SYSTEM */
 
-.container{
 
-width:min(100% - 24px,var(--container));
+/* MOBILE DEFAULT */
+
+
+.theme-btn,
+.primary-btn,
+.filter-btn {
+
+    min-height:44px;
 
 }
+
+
+/* Improve mobile form spacing */
+
+.task-form-section {
+
+    padding:var(--space-2);
+
+}
+
+
+/* Better mobile typography */
+
+.hero h2 {
+
+    font-size:1.6rem;
+
+}
+
+
+.stat-card span {
+
+    font-size:1.6rem;
+
+}
+
+
+/* Better touch experience */
+
+input,
+textarea,
+select {
+
+    font-size:16px;
+
+}
+
+
+
+/* TABLET */
+
+
+@media(min-width:768px){
+
+
+    main {
+
+        padding-block:var(--space-5);
+
+    }
+
+
+    .statistics {
+
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    }
+
+
+    .form-row {
+
+
+        flex-direction:row;
+
+
+    }
+
+
+    .form-row .form-group {
+
+
+        flex:1;
+
+
+    }
+
+
+    .task-form-section {
+
+
+        padding:var(--space-4);
+
+
+    }
+
+
+}
+
+
+
+/* DESKTOP */
+
+
+@media(min-width:1024px){
+
+
+    .statistics {
+
+
+        grid-template-columns:
+
+        repeat(4,1fr);
+
+
+    }
+
+
+
+    .hero h2 {
+
+
+        font-size:2.5rem;
+
+
+    }
+
+
+
+    .task-form-section {
+
+
+        padding:var(--space-5);
+
+
+    }
+
 
 }
