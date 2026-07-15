@@ -1,15 +1,28 @@
-/* TASKFLOW COMPONENT SYSTEM */
+/*
+TaskFlow Component System
+
+Contains reusable UI components.
+Each component uses design tokens.
+*/
 
 
-/* HEADER COMPONENT */
+/* Header Component */
+
 
 .app-header {
 
-    background:var(--surface);
 
-    border-bottom:1px solid var(--border);
+    background:
+    var(--surface);
 
-    padding-block:var(--space-2);
+
+    border-bottom:
+    1px solid var(--border);
+
+
+    backdrop-filter:
+    blur(12px);
+
 
 }
 
@@ -17,20 +30,36 @@
 
 .logo-section {
 
+
     display:flex;
+
 
     flex-direction:column;
 
-    gap:4px;
+
+    gap:
+    var(--space-2);
+
 
 }
 
 
+
 .logo {
 
-    font-size:1.8rem;
 
-    font-weight:700;
+    font-size:2rem;
+
+
+    font-weight:800;
+
+
+    letter-spacing:-0.04em;
+
+
+    color:
+    var(--text);
+
 
 }
 
@@ -38,31 +67,62 @@
 
 .tagline {
 
-    color:var(--text-light);
+
+    color:
+    var(--text-light);
+
 
     font-size:.9rem;
+
 
 }
 
 
 
+
+
+/* Theme Button */
+
+
 .theme-btn {
 
-    width:42px;
 
-    height:42px;
+    width:44px;
+
+
+    height:44px;
+
 
     border-radius:50%;
 
-    background:var(--background);
 
     display:flex;
 
+
     align-items:center;
+
 
     justify-content:center;
 
-    transition:var(--transition);
+
+    background:
+    var(--surface-hover);
+
+
+    color:
+    var(--text);
+
+
+    font-size:1.2rem;
+
+
+    box-shadow:
+    var(--shadow-sm);
+
+
+    transition:
+    var(--transition);
+
 
 }
 
@@ -70,19 +130,68 @@
 
 .theme-btn:hover {
 
-    transform:rotate(15deg);
+
+    transform:
+    rotate(15deg)
+    scale(1.05);
+
+
+    box-shadow:
+    var(--shadow-md);
+
 
 }
 
 
 
-/* HERO COMPONENT */
+
+
+/* Hero Component */
+
+
+.hero {
+
+
+    padding:
+    var(--space-6);
+
+
+    border-radius:
+    var(--radius-xl);
+
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--surface),
+        var(--surface-hover)
+    );
+
+
+    border:
+    1px solid var(--border);
+
+
+}
+
+
 
 .hero h2 {
 
-    font-size:2rem;
 
-    line-height:1.2;
+    font-size:
+    clamp(
+        1.8rem,
+        4vw,
+        2.6rem
+    );
+
+
+    font-weight:800;
+
+
+    letter-spacing:-0.04em;
+
 
 }
 
@@ -90,33 +199,62 @@
 
 .hero p {
 
-    color:var(--text-light);
+
+    color:
+    var(--text-light);
+
+
+    max-width:600px;
+
+
+    line-height:1.6;
+
 
 }
 
 
 
-/* STAT CARD COMPONENT */
+
+
+/* Statistics Cards */
+
 
 .stat-card {
 
-    background:var(--surface);
 
-    padding:var(--space-3);
+    background:
+    var(--surface);
 
-    border-radius:var(--radius-medium);
 
-    box-shadow:var(--shadow);
+    padding:
+    var(--space-5);
 
-    border:1px solid var(--border);
+
+    border-radius:
+    var(--radius-lg);
+
+
+    border:
+    1px solid var(--border);
+
+
+    box-shadow:
+    var(--shadow-sm);
+
 
     display:flex;
 
+
     flex-direction:column;
 
-    gap:var(--space-1);
 
-    transition:var(--transition);
+    gap:
+    var(--space-3);
+
+
+    transition:
+    var(--transition);
+
 
 }
 
@@ -124,7 +262,14 @@
 
 .stat-card:hover {
 
-    transform:translateY(-4px);
+
+    transform:
+    translateY(-6px);
+
+
+    box-shadow:
+    var(--shadow-md);
+
 
 }
 
@@ -132,9 +277,16 @@
 
 .stat-card h3 {
 
+
     font-size:.9rem;
 
-    color:var(--text-light);
+
+    color:
+    var(--text-light);
+
+
+    font-weight:600;
+
 
 }
 
@@ -142,27 +294,44 @@
 
 .stat-card span {
 
-    font-size:2rem;
 
-    font-weight:700;
+    font-size:2.2rem;
+
+
+    font-weight:800;
+
 
 }
 
 
 
-/* FORM COMPONENT */
+
+
+/* Form Card */
+
 
 .task-form-section {
 
-    background:var(--surface);
 
-    padding:var(--space-3);
+    background:
+    var(--surface);
 
-    border-radius:var(--radius-large);
 
-    box-shadow:var(--shadow);
+    padding:
+    var(--space-6);
 
-    border:1px solid var(--border);
+
+    border-radius:
+    var(--radius-xl);
+
+
+    border:
+    1px solid var(--border);
+
+
+    box-shadow:
+    var(--shadow-md);
+
 
 }
 
@@ -170,13 +339,21 @@
 
 .task-form-section h2 {
 
-    font-size:1.4rem;
+
+    font-size:1.5rem;
+
+
+    font-weight:700;
+
 
 }
 
 
 
-/* INPUT COMPONENT */
+
+
+/* Form Inputs */
+
 
 input,
 textarea,
@@ -185,19 +362,45 @@ select {
 
     width:100%;
 
-    padding:12px 14px;
 
-    border-radius:var(--radius-small);
+    padding:
+    14px 16px;
 
-    border:1px solid var(--border);
 
-    background:var(--surface);
+    border-radius:
+    var(--radius-md);
 
-    color:var(--text);
+
+    border:
+    1px solid var(--border);
+
+
+    background:
+    var(--background);
+
+
+    color:
+    var(--text);
+
 
     outline:none;
 
-    transition:var(--transition);
+
+    transition:
+    var(--transition);
+
+
+}
+
+
+
+input::placeholder,
+textarea::placeholder {
+
+
+    color:
+    var(--text-muted);
+
 
 }
 
@@ -208,30 +411,48 @@ textarea:focus,
 select:focus {
 
 
-    border-color:var(--primary);
+    border-color:
+    var(--primary);
 
-    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+    box-shadow:
+    0 0 0 4px
+    rgba(37,99,235,.15);
+
 
 }
 
 
 
-/* BUTTON COMPONENTS */
+
+
+/* Primary Button */
+
 
 .primary-btn {
 
 
-    background:var(--primary);
+    padding:
+    14px 24px;
+
+
+    border-radius:
+    var(--radius-md);
+
+
+    background:
+    var(--primary);
+
 
     color:white;
 
-    padding:12px 20px;
 
-    border-radius:var(--radius-small);
+    font-weight:700;
 
-    font-weight:600;
 
-    transition:var(--transition);
+    transition:
+    var(--transition);
+
 
 }
 
@@ -240,30 +461,56 @@ select:focus {
 .primary-btn:hover {
 
 
-    background:var(--primary-dark);
+    background:
+    var(--primary-hover);
 
-    transform:translateY(-2px);
+
+    transform:
+    translateY(-2px);
+
+
+    box-shadow:
+    var(--shadow-md);
+
 
 }
 
 
 
-/* FILTER BUTTON */
+
+
+/* Filter Buttons */
+
 
 .filter-btn {
 
 
-    padding:10px 18px;
+    padding:
+    10px 18px;
 
-    border-radius:999px;
 
-    background:var(--surface);
+    border-radius:
+    999px;
 
-    border:1px solid var(--border);
 
-    color:var(--text-light);
+    background:
+    var(--surface);
 
-    transition:var(--transition);
+
+    border:
+    1px solid var(--border);
+
+
+    color:
+    var(--text-light);
+
+
+    font-weight:600;
+
+
+    transition:
+    var(--transition);
+
 
 }
 
@@ -272,9 +519,13 @@ select:focus {
 .filter-btn:hover {
 
 
-    border-color:var(--primary);
+    color:
+    var(--primary);
 
-    color:var(--primary);
+
+    border-color:
+    var(--primary);
+
 
 }
 
@@ -283,28 +534,285 @@ select:focus {
 .filter-btn.active {
 
 
-    background:var(--primary);
+    background:
+    var(--primary);
+
 
     color:white;
 
-    border-color:var(--primary);
+
+    border-color:
+    var(--primary);
+
 
 }
 
 
 
-/* EMPTY STATE */
+
+
+/* Task Card Base */
+
+
+.task-card {
+
+
+    background:
+    var(--surface);
+
+
+    padding:
+    var(--space-5);
+
+
+    border-radius:
+    var(--radius-lg);
+
+
+    border:
+    1px solid var(--border);
+
+
+    box-shadow:
+    var(--shadow-sm);
+
+
+    transition:
+    var(--transition);
+
+
+}
+
+
+
+.task-card:hover {
+
+
+    transform:
+    translateY(-4px);
+
+
+    box-shadow:
+    var(--shadow-md);
+
+
+}
+
+
+
+.task-header {
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    gap:
+    var(--space-3);
+
+
+}
+
+
+
+.task-title {
+
+
+    font-size:1.15rem;
+
+
+    font-weight:700;
+
+
+}
+
+
+
+.task-description {
+
+
+    color:
+    var(--text-light);
+
+
+    line-height:1.6;
+
+
+}
+
+
+
+.task-meta {
+
+
+    color:
+    var(--text-muted);
+
+
+    font-size:.85rem;
+
+
+}
+
+
+
+
+
+/* Priority Badge */
+
+
+.priority-badge {
+
+
+    padding:
+    6px 12px;
+
+
+    border-radius:
+    999px;
+
+
+    background:
+    var(--warning);
+
+
+    color:white;
+
+
+    font-size:.75rem;
+
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+/* Task Actions */
+
+
+.task-actions {
+
+
+    display:flex;
+
+
+    gap:
+    var(--space-3);
+
+
+}
+
+
+
+.secondary-btn,
+.danger-btn {
+
+
+    padding:
+    10px 16px;
+
+
+    border-radius:
+    var(--radius-md);
+
+
+    font-weight:600;
+
+
+}
+
+
+
+.secondary-btn {
+
+
+    background:
+    var(--surface-hover);
+
+
+    color:
+    var(--text);
+
+
+}
+
+
+
+.danger-btn {
+
+
+    background:
+    var(--danger);
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+/* Completed Task */
+
+
+.task-card.completed {
+
+
+    opacity:.65;
+
+
+}
+
+
+
+.task-card.completed .task-title {
+
+
+    text-decoration:
+    line-through;
+
+
+}
+
+
+
+
+
+/* Empty State */
+
 
 .empty-state {
 
 
-    background:var(--surface);
+    text-align:center;
 
-    padding:var(--space-5);
 
-    border-radius:var(--radius-large);
+    padding:
+    var(--space-8);
 
-    border:1px dashed var(--border);
+
+    border-radius:
+    var(--radius-xl);
+
+
+    background:
+    var(--surface);
+
+
+    border:
+    1px dashed var(--border);
+
 
 }
 
@@ -313,7 +821,9 @@ select:focus {
 .empty-state h2 {
 
 
-    margin-bottom:var(--space-1);
+    margin-bottom:
+    var(--space-3);
+
 
 }
 
@@ -322,203 +832,35 @@ select:focus {
 .empty-state p {
 
 
-    color:var(--text-light);
+    color:
+    var(--text-light);
+
 
 }
 
 
 
-/* FOOTER */
+
+
+/* Footer */
+
 
 .app-footer {
 
 
-    background:var(--surface);
+    background:
+    var(--surface);
 
-    border-top:1px solid var(--border);
 
-    padding-block:var(--space-3);
+    border-top:
+    1px solid var(--border);
+
+
+    color:
+    var(--text-light);
+
 
     text-align:center;
 
-    color:var(--text-light);
-
-}
-
-/* TASK ITEM */
-
-
-.task-item{
-
-background:var(--surface);
-
-padding:var(--space-2);
-
-border-radius:var(--radius-medium);
-
-border:1px solid var(--border);
-
-box-shadow:var(--shadow);
-
-}
-
-/* TASK CARD COMPONENT */
-
-
-.task-card{
-
-background:var(--surface);
-
-padding:var(--space-3);
-
-border-radius:var(--radius-medium);
-
-border:1px solid var(--border);
-
-box-shadow:var(--shadow);
-
-display:flex;
-
-flex-direction:column;
-
-gap:var(--space-2);
-
-}
-
-
-
-.task-header{
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:var(--space-2);
-
-}
-
-
-
-.task-title{
-
-font-size:1.1rem;
-
-}
-
-
-
-.priority-badge{
-
-padding:6px 12px;
-
-border-radius:999px;
-
-background:var(--warning);
-
-color:white;
-
-font-size:.8rem;
-
-font-weight:600;
-
-}
-
-
-
-.task-description{
-
-color:var(--text-light);
-
-line-height:1.5;
-
-}
-
-
-
-.task-meta{
-
-display:flex;
-
-justify-content:space-between;
-
-color:var(--text-light);
-
-font-size:.85rem;
-
-}
-
-
-
-.task-actions{
-
-display:flex;
-
-gap:var(--space-1);
-
-}
-
-
-
-/* Button Variations */
-
-
-.secondary-btn{
-
-background:var(--background);
-
-padding:10px 16px;
-
-border-radius:var(--radius-small);
-
-}
-
-
-
-.danger-btn{
-
-background:var(--danger);
-
-color:white;
-
-padding:10px 16px;
-
-border-radius:var(--radius-small);
-
-}
-
-.editing{
-
-border:2px solid var(--primary);
-
-}
-
-/* COMPLETED TASK STATE */
-
-
-.task-card.completed{
-
-opacity:.65;
-
-}
-
-
-
-.task-card.completed .task-title{
-
-text-decoration:line-through;
-
-}
-
-
-
-.task-checkbox{
-
-width:20px;
-
-height:20px;
-
-cursor:pointer;
 
 }

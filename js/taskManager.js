@@ -1,69 +1,56 @@
-"use strict";
+/*
+TaskFlow Task Manager
+
+Responsible for all task operations.
+
+This file contains application business logic.
+
+It does not handle UI.
+It does not manipulate HTML.
+*/
 
 
 import {
-getTasks,
-setTasks
+
+    getTasks,
+
+    addTaskToState,
+
+    removeTaskFromState,
+
+    findTaskById,
+
+    setTasks
+
 }
+
 from "./state.js";
 
 
+
 import {
-saveTasks
+
+    saveTasks
+
 }
+
 from "./storage.js";
 
 
-import {
-generateId
-}
-from "./utils.js";
 
 
 
-export function createTask(data){
+/*
+Generate unique task ID
+
+Uses current timestamp
+to reduce duplicate IDs.
+*/
+
+function generateId(){
 
 
-const tasks=getTasks();
-
-
-
-const newTask={
-
-id:generateId(),
-
-title:data.title,
-
-description:data.description,
-
-category:data.category,
-
-priority:data.priority,
-
-dueDate:data.dueDate,
-
-completed:false,
-
-createdAt:new Date().toISOString(),
-
-updatedAt:new Date().toISOString()
-
-};
-
-
-
-tasks.push(newTask);
-
-
-
-setTasks(tasks);
-
-
-saveTasks(tasks);
-
-
-
-return newTask;
+    return Date.now();
 
 
 }
@@ -72,48 +59,135 @@ return newTask;
 
 
 
-export function updateTask(id,data){
+/*
+Create new task
 
+Receives task information
+from the application form.
+*/
 
-const tasks=getTasks();
-
-
-
-const task =
-tasks.find(
-task=>task.id===id
-);
+export function createTask(taskData){
 
 
 
-if(!task){
+    const newTask = {
 
-return null;
+
+        id:
+        generateId(),
+
+
+        title:
+        taskData.title,
+
+
+        description:
+        taskData.description || "",
+
+
+        category:
+        taskData.category || "Personal",
+
+
+        priority:
+        taskData.priority || "Low",
+
+
+        dueDate:
+        taskData.dueDate || "",
+
+
+        completed:false,
+
+
+        createdAt:
+        new Date().toISOString()
+
+
+    };
+
+
+
+    addTaskToState(
+        newTask
+    );
+
+
+
+    saveTasks(
+        getTasks()
+    );
+
+
+
+    return newTask;
+
 
 }
 
 
 
-Object.assign(
-task,
-data
-);
+
+
+/*
+Update existing task
+
+Finds task by ID
+and replaces editable values.
+*/
+
+export function updateTask(
+    id,
+    updatedData
+){
 
 
 
-task.updatedAt =
-new Date().toISOString();
+    const task =
+    findTaskById(id);
 
 
 
-setTasks(tasks);
+    if(!task){
+
+        return null;
+
+    }
 
 
-saveTasks(tasks);
+
+    task.title =
+    updatedData.title;
 
 
 
-return task;
+    task.description =
+    updatedData.description;
+
+
+
+    task.category =
+    updatedData.category;
+
+
+
+    task.priority =
+    updatedData.priority;
+
+
+
+    task.dueDate =
+    updatedData.dueDate;
+
+
+
+    saveTasks(
+        getTasks()
+    );
+
+
+
+    return task;
 
 
 }
@@ -121,26 +195,26 @@ return task;
 
 
 
+
+/*
+Delete task
+
+Removes task completely.
+*/
 
 export function deleteTask(id){
 
 
-const tasks=getTasks();
+
+    removeTaskFromState(
+        id
+    );
 
 
 
-const updatedTasks =
-tasks.filter(
-task=>task.id!==id
-);
-
-
-
-setTasks(updatedTasks);
-
-
-saveTasks(updatedTasks);
-
+    saveTasks(
+        getTasks()
+    );
 
 
 }
@@ -148,47 +222,74 @@ saveTasks(updatedTasks);
 
 
 
+
+/*
+Toggle task completion
+
+Changes:
+
+false → true
+
+true → false
+
+*/
 
 export function toggleTask(id){
 
 
-const tasks=getTasks();
+
+    const task =
+    findTaskById(id);
 
 
 
-const task =
-tasks.find(
-task=>task.id===id
-);
+    if(!task){
+
+        return null;
+
+    }
 
 
 
-if(!task){
+    task.completed =
+    !task.completed;
 
-return null;
+
+
+    saveTasks(
+        getTasks()
+    );
+
+
+
+    return task;
+
 
 }
 
 
 
-task.completed =
-!task.completed;
+
+
+/*
+Delete all tasks
+
+Used by future feature:
+
+Delete All button.
+*/
+
+export function deleteAllTasks(){
 
 
 
-task.updatedAt =
-new Date().toISOString();
+    setTasks([]);
 
 
 
-setTasks(tasks);
-
-
-saveTasks(tasks);
-
-
-
-return task;
+    saveTasks(
+        []
+    );
 
 
 }

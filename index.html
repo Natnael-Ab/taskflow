@@ -1,52 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TaskFlow | Modern Task Manager</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="TaskFlow is a modern task management application built using HTML, CSS and JavaScript.">
+    <meta
+        name="description"
+        content="TaskFlow is a modern task management application built with HTML, CSS and JavaScript.">
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <meta
+        name="theme-color"
+        content="#2563eb">
+
+    <title>
+        TaskFlow | Modern Task Manager
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/reset.css">
+
+    <link
+        rel="stylesheet"
+        href="css/variables.css">
+
+    <link
+        rel="stylesheet"
+        href="css/layout.css">
+
+    <link
+        rel="stylesheet"
+        href="css/components.css">
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css">
+
 </head>
 
 <body>
 
     <div id="app">
 
-        <!-- HEADER -->
+        <!-- Application header -->
 
         <header class="app-header">
 
             <div class="container header-content">
 
                 <div class="logo-section">
-                    <h1 class="logo">TaskFlow</h1>
+
+                    <h1 class="logo">
+                        TaskFlow
+                    </h1>
+
                     <p class="tagline">
                         Organize your work. Focus on what matters.
                     </p>
+
                 </div>
 
-                <button class="theme-btn" type="button">
+                <button
+                    id="themeToggle"
+                    class="theme-btn"
+                    type="button"
+                    aria-label="Toggle theme">
+
                     🌙
+
                 </button>
 
             </div>
 
         </header>
 
-        <!-- MAIN -->
+        <main
+            id="mainContent"
+            class="container">
 
-        <main class="container">
-
-            <!-- Hero -->
+            <!-- Welcome section -->
 
             <section class="hero">
 
@@ -55,42 +92,64 @@
                 </h2>
 
                 <p>
-                    Manage your daily tasks efficiently and stay productive.
+                    Stay organized, finish more tasks and keep your day under control.
                 </p>
 
             </section>
 
-            <!-- Statistics -->
+            <!-- Statistics dashboard -->
 
             <section class="statistics">
 
                 <article class="stat-card">
-                    <h3>Total</h3>
-                    <span id="totalTasks">0</span>
+
+                    <h3>Total Tasks</h3>
+
+                    <span id="totalTasks">
+                        0
+                    </span>
+
                 </article>
 
                 <article class="stat-card">
+
                     <h3>Active</h3>
-                    <span id="activeTasks">0</span>
+
+                    <span id="activeTasks">
+                        0
+                    </span>
+
                 </article>
 
                 <article class="stat-card">
+
                     <h3>Completed</h3>
-                    <span id="completedTasks">0</span>
+
+                    <span id="completedTasks">
+                        0
+                    </span>
+
                 </article>
 
                 <article class="stat-card">
+
                     <h3>Progress</h3>
-                    <span id="progressValue">0%</span>
+
+                    <span id="progressValue">
+                        0%
+                    </span>
+
                 </article>
 
             </section>
 
-            <!-- Create Task -->
+            <!-- Task creation form -->
 
             <section class="task-form-section">
 
-                <h2>Create New Task</h2>
+                <h2>
+                    Create New Task
+                </h2>
 
                 <form id="taskForm">
 
@@ -116,7 +175,7 @@
                         <textarea
                             id="taskDescription"
                             rows="4"
-                            placeholder="Task description"></textarea>
+                            placeholder="Describe your task"></textarea>
 
                     </div>
 
@@ -192,44 +251,59 @@
 
             </section>
 
-            <!-- Filters -->
+            <!-- Filter buttons -->
 
             <section class="filter-section">
 
-                <button class="filter-btn active">
+                <button
+                    class="filter-btn active"
+                    data-filter="all"
+                    type="button">
+
                     All
+
                 </button>
 
-                <button class="filter-btn">
+                <button
+                    class="filter-btn"
+                    data-filter="active"
+                    type="button">
+
                     Active
+
                 </button>
 
-                <button class="filter-btn">
+                <button
+                    class="filter-btn"
+                    data-filter="completed"
+                    type="button">
+
                     Completed
+
                 </button>
 
             </section>
 
-            <!-- Task List -->
+            <!-- Task list -->
 
             <section class="task-section">
 
-                <ul id="taskList">
-
-                </ul>
+                <ul id="taskList"></ul>
 
             </section>
 
-            <!-- Empty State -->
+            <!-- Empty state -->
 
-            <section class="empty-state">
+            <section
+                id="emptyState"
+                class="empty-state">
 
                 <h2>
                     No Tasks Yet
                 </h2>
 
                 <p>
-                    Create your first task to begin your productivity journey.
+                    Create your first task and begin your productivity journey.
                 </p>
 
             </section>
@@ -243,9 +317,7 @@
             <div class="container">
 
                 <p>
-
                     Built with HTML, CSS and JavaScript.
-
                 </p>
 
             </div>
@@ -254,7 +326,10 @@
 
     </div>
 
-    <script type="module" src="js/app.js"></script>
+    <script
+        type="module"
+        src="js/app.js">
+    </script>
 
 </body>
 

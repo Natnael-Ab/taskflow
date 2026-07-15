@@ -1,58 +1,182 @@
-:root{
+/*
+TaskFlow Design Tokens
 
-/* Brand */
+All visual values are centralized here.
+Components should use these variables.
+*/
 
---primary:#2563eb;
---primary-dark:#1d4ed8;
 
-/* Status */
+:root,
+:root[data-theme="light"] {
 
---success:#16a34a;
---warning:#d97706;
---danger:#dc2626;
 
-/* Background */
+    /* Brand Colors */
 
---background:#f4f7fb;
---surface:#ffffff;
+    --primary:#2563eb;
 
-/* Text */
+    --primary-hover:#1d4ed8;
 
---text:#111827;
---text-light:#6b7280;
+    --secondary:#7c3aed;
 
-/* Border */
 
---border:#e5e7eb;
 
-/* Radius */
+    /* Status Colors */
 
---radius-small:8px;
---radius-medium:14px;
---radius-large:20px;
+    --success:#22c55e;
 
-/* Shadow */
+    --warning:#f59e0b;
 
---shadow:0 12px 24px rgba(0,0,0,.08);
+    --danger:#ef4444;
 
-/* Transition */
 
---transition:.3s ease;
 
-/* Layout */
+    /* Background System */
 
---container-width:1200px;
+    --background:#f8fafc;
 
-/* Spacing */
+    --surface:#ffffff;
 
---space-1:8px;
---space-2:16px;
---space-3:24px;
---space-4:32px;
---space-5:48px;
+    --surface-hover:#f1f5f9;
 
-/* Font */
 
---font-family:Arial,Helvetica,sans-serif;
+
+    /* Text System */
+
+    --text:#0f172a;
+
+    --text-light:#64748b;
+
+    --text-muted:#94a3b8;
+
+
+
+    /* Border */
+
+    --border:#e2e8f0;
+
+
+
+    /* Shadows */
+
+    --shadow-sm:
+    0 1px 3px rgba(15,23,42,.08);
+
+
+    --shadow-md:
+    0 10px 25px rgba(15,23,42,.10);
+
+
+    --shadow-lg:
+    0 20px 40px rgba(15,23,42,.14);
+
+
+
+    /* Border Radius */
+
+    --radius-sm:8px;
+
+    --radius-md:14px;
+
+    --radius-lg:22px;
+
+    --radius-xl:32px;
+
+
+
+    /* Spacing Scale */
+
+    --space-1:4px;
+
+    --space-2:8px;
+
+    --space-3:12px;
+
+    --space-4:16px;
+
+    --space-5:24px;
+
+    --space-6:32px;
+
+    --space-7:48px;
+
+    --space-8:64px;
+
+
+
+    /* Animation */
+
+    --transition-fast:
+    .2s ease;
+
+
+    --transition:
+    .3s ease;
+
+
+    --transition-slow:
+    .5s ease;
+
+
+
+    /* Layout */
+
+    --container-width:
+    1200px;
+
+
+}
+
+
+
+
+
+/*
+Dark Theme
+
+Activated by:
+
+<html data-theme="dark">
+*/
+
+
+:root[data-theme="dark"] {
+
+
+
+    --background:#020617;
+
+
+    --surface:#0f172a;
+
+
+    --surface-hover:#1e293b;
+
+
+
+    --text:#f8fafc;
+
+
+    --text-light:#cbd5e1;
+
+
+    --text-muted:#94a3b8;
+
+
+
+    --border:#334155;
+
+
+
+    --shadow-sm:
+    0 1px 3px rgba(0,0,0,.4);
+
+
+    --shadow-md:
+    0 10px 25px rgba(0,0,0,.45);
+
+
+    --shadow-lg:
+    0 20px 40px rgba(0,0,0,.6);
+
 
 }

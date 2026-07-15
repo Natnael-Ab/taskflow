@@ -1,122 +1,68 @@
-/* TASKFLOW RESPONSIVE SYSTEM */
+/*
+TaskFlow Responsive System
+
+Mobile first approach.
+Base styles target small screens.
+Larger layouts are added progressively.
+*/
 
 
-/* MOBILE DEFAULT */
+/*
+Small Mobile Optimization
+*/
+
+@media(max-width:480px){
 
 
-.theme-btn,
-.primary-btn,
-.filter-btn {
-
-    min-height:44px;
-
-}
+    .container {
 
 
-/* Improve mobile form spacing */
-
-.task-form-section {
-
-    padding:var(--space-2);
-
-}
-
-
-/* Better mobile typography */
-
-.hero h2 {
-
-    font-size:1.6rem;
-
-}
-
-
-.stat-card span {
-
-    font-size:1.6rem;
-
-}
-
-
-/* Better touch experience */
-
-input,
-textarea,
-select {
-
-    font-size:16px;
-
-}
-
-
-
-/* TABLET */
-
-
-@media(min-width:768px){
-
-
-    main {
-
-        padding-block:var(--space-5);
-
-    }
-
-
-    .statistics {
-
-
-        grid-template-columns:
-
-        repeat(2,1fr);
+        padding-inline:
+        var(--space-4);
 
 
     }
 
 
-    .form-row {
+
+    .logo {
 
 
-        flex-direction:row;
-
-
-    }
-
-
-    .form-row .form-group {
-
-
-        flex:1;
+        font-size:1.6rem;
 
 
     }
 
 
-    .task-form-section {
+
+    .tagline {
 
 
-        padding:var(--space-4);
+        font-size:.8rem;
 
 
     }
 
 
-}
+
+    .theme-btn {
+
+
+        width:40px;
+
+
+        height:40px;
+
+
+    }
 
 
 
-/* DESKTOP */
+    .hero {
 
 
-@media(min-width:1024px){
-
-
-    .statistics {
-
-
-        grid-template-columns:
-
-        repeat(4,1fr);
+        padding:
+        var(--space-5);
 
 
     }
@@ -126,7 +72,30 @@ select {
     .hero h2 {
 
 
-        font-size:2.5rem;
+        font-size:
+        1.7rem;
+
+
+    }
+
+
+
+    .stat-card {
+
+
+        padding:
+        var(--space-4);
+
+
+    }
+
+
+
+    .stat-card span {
+
+
+        font-size:
+        1.8rem;
 
 
     }
@@ -136,10 +105,227 @@ select {
     .task-form-section {
 
 
-        padding:var(--space-5);
+        padding:
+        var(--space-5);
 
 
     }
+
+
+
+    .primary-btn {
+
+
+        width:100%;
+
+
+    }
+
+
+
+    .filter-section {
+
+
+        gap:
+        var(--space-2);
+
+
+    }
+
+
+
+    .filter-btn {
+
+
+        flex:1;
+
+
+        padding:
+        10px;
+
+
+    }
+
+
+
+    .task-header {
+
+
+        flex-direction:column;
+
+
+        align-items:flex-start;
+
+
+    }
+
+
+
+    .task-actions {
+
+
+        width:100%;
+
+
+    }
+
+
+
+    .secondary-btn,
+    .danger-btn {
+
+
+        flex:1;
+
+
+    }
+
+
+}
+
+
+
+
+
+/*
+Tablet Experience
+
+Screens wider than 768px
+*/
+
+@media(min-width:768px){
+
+
+
+    .header-content {
+
+
+        min-height:80px;
+
+
+    }
+
+
+
+    .hero {
+
+
+        padding:
+        var(--space-7);
+
+
+    }
+
+
+
+    .task-form-section {
+
+
+        padding:
+        var(--space-7);
+
+
+    }
+
+
+
+    .primary-btn {
+
+
+        width:auto;
+
+
+        align-self:flex-start;
+
+
+    }
+
+
+
+    .task-actions {
+
+
+        justify-content:flex-end;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+/*
+Desktop Experience
+
+Screens wider than 1024px
+*/
+
+@media(min-width:1024px){
+
+
+
+    .hero {
+
+
+        padding:
+        var(--space-8);
+
+
+    }
+
+
+
+    .hero h2 {
+
+
+        font-size:
+        3rem;
+
+
+    }
+
+
+
+    .task-card {
+
+
+        padding:
+        var(--space-6);
+
+
+    }
+
+
+
+}
+
+
+
+
+
+/*
+Large Desktop
+
+Premium wide screen experience
+*/
+
+@media(min-width:1400px){
+
+
+
+    .container {
+
+
+        max-width:
+        1280px;
+
+
+    }
+
 
 
 }

@@ -1,231 +1,425 @@
-/* TASKFLOW LAYOUT SYSTEM */
+/*
+TaskFlow Layout System
+
+Controls page structure.
+Components should not control global layout.
+*/
 
 
-/* GLOBAL LAYOUT */
-
-body {
-
-    font-family: var(--font-family);
-
-    background: var(--background);
-
-    color: var(--text);
-
-}
+/* Application wrapper */
 
 
 #app {
 
-    min-height: 100vh;
+    min-height:100vh;
 
-    display: flex;
+    display:flex;
 
-    flex-direction: column;
+    flex-direction:column;
+
+    background:
+    var(--background);
+
+    color:
+    var(--text);
 
 }
 
 
-/* CONTAINER */
+
+
+
+/* Main container */
+
 
 .container {
 
-    width: min(
-        calc(100% - 32px),
-        var(--container-width)
-    );
 
-    margin-inline: auto;
+    width:100%;
+
+    max-width:
+    var(--container-width);
+
+
+    margin-inline:auto;
+
+
+    padding-inline:
+    var(--space-5);
+
 
 }
 
 
 
-/* HEADER LAYOUT */
+
+
+/* Header Layout */
+
 
 .app-header {
 
-    width: 100%;
+
+    position:sticky;
+
+    top:0;
+
+
+    z-index:100;
+
 
 }
+
+
+
 
 
 .header-content {
 
-    display: flex;
 
-    align-items: center;
+    min-height:72px;
 
-    justify-content: space-between;
 
-    gap: var(--space-2);
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:space-between;
+
+
+    gap:
+    var(--space-4);
+
 
 }
 
 
 
-/* MAIN CONTENT */
 
-main {
 
-    flex: 1;
+/* Main Content */
 
-    display: flex;
 
-    flex-direction: column;
+main.container {
 
-    gap: var(--space-4);
 
-    padding-block: var(--space-4);
+    flex:1;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:
+    var(--space-7);
+
+
+    padding-block:
+    var(--space-7);
+
 
 }
 
 
 
-/* HERO SECTION */
+
+
+/* Hero Layout */
+
 
 .hero {
 
-    display: flex;
 
-    flex-direction: column;
+    display:flex;
 
-    gap: var(--space-1);
+
+    flex-direction:column;
+
+
+    gap:
+    var(--space-3);
+
 
 }
 
 
 
-/* STATISTICS GRID */
+
+
+/* Statistics Layout */
+
 
 .statistics {
 
-    display: grid;
 
-    grid-template-columns: 1fr;
+    display:grid;
 
-    gap: var(--space-2);
+
+    grid-template-columns:
+    repeat(1,1fr);
+
+
+    gap:
+    var(--space-4);
+
 
 }
 
 
 
-/* TASK FORM */
+
+
+/* Form Layout */
+
 
 .task-form-section {
 
-    display: flex;
 
-    flex-direction: column;
+    display:flex;
 
-    gap: var(--space-3);
+
+    flex-direction:column;
+
+
+    gap:
+    var(--space-5);
+
 
 }
+
+
+
 
 
 #taskForm {
 
-    display: flex;
 
-    flex-direction: column;
+    display:flex;
 
-    gap: var(--space-2);
+
+    flex-direction:column;
+
+
+    gap:
+    var(--space-4);
+
 
 }
+
+
 
 
 
 .form-group {
 
-    display: flex;
 
-    flex-direction: column;
+    display:flex;
 
-    gap: var(--space-1);
+
+    flex-direction:column;
+
+
+    gap:
+    var(--space-2);
+
 
 }
+
+
 
 
 
 .form-row {
 
-    display: flex;
 
-    flex-direction: column;
+    display:grid;
 
-    gap: var(--space-2);
+
+    grid-template-columns:
+    1fr;
+
+
+    gap:
+    var(--space-4);
+
 
 }
 
 
 
-/* SEARCH */
+
+
+/* Search Layout */
+
 
 .search-section {
 
+
     width:100%;
+
 
 }
 
 
 
-/* FILTERS */
+
+
+/* Filter Layout */
+
 
 .filter-section {
 
+
     display:flex;
+
 
     flex-wrap:wrap;
 
-    gap:var(--space-1);
+
+    gap:
+    var(--space-3);
+
 
 }
 
 
 
-/* TASK AREA */
+
+
+/* Task List Layout */
+
 
 .task-section {
 
+
     width:100%;
 
+
 }
+
+
 
 
 
 #taskList {
 
+
     display:flex;
+
 
     flex-direction:column;
 
-    gap:var(--space-2);
+
+    gap:
+    var(--space-4);
+
 
 }
 
 
 
-/* EMPTY STATE */
-
-.empty-state {
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-}
 
 
+/* Footer Layout */
 
-/* FOOTER */
 
 .app-footer {
 
+
     margin-top:auto;
+
+
+}
+
+
+
+
+
+/*
+Tablet Layout
+
+Improves spacing for larger screens.
+*/
+
+
+@media(min-width:768px){
+
+
+
+.container {
+
+    padding-inline:
+    var(--space-7);
+
+}
+
+
+
+
+.statistics {
+
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+
+}
+
+
+
+
+.form-row {
+
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+
+}
+
+
+
+}
+
+
+
+
+
+/*
+Desktop Layout
+
+Full application experience.
+*/
+
+
+@media(min-width:1024px){
+
+
+
+.statistics {
+
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+
+}
+
+
+
+main.container {
+
+
+    padding-block:
+    var(--space-8);
+
+
+}
+
+
 
 }
