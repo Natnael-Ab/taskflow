@@ -1,425 +1,244 @@
 /*
 TaskFlow Layout System
 
-Controls page structure.
-Components should not control global layout.
+This stylesheet controls page structure,
+containers, spacing and layout.
+
+Visual styling belongs in components.css.
 */
 
+body {
 
-/* Application wrapper */
+    min-height: 100vh;
 
+    font-family: var(--font-family);
+
+    background: var(--background);
+
+    color: var(--text-primary);
+
+    line-height: var(--line-height);
+
+}
 
 #app {
 
-    min-height:100vh;
+    min-height: 100vh;
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
-
-    background:
-    var(--background);
-
-    color:
-    var(--text);
+    flex-direction: column;
 
 }
-
-
-
-
-
-/* Main container */
-
 
 .container {
 
+    width: min(100% - 2rem, var(--container-width));
 
-    width:100%;
-
-    max-width:
-    var(--container-width);
-
-
-    margin-inline:auto;
-
-
-    padding-inline:
-    var(--space-5);
-
+    margin-inline: auto;
 
 }
 
+main {
 
+    flex: 1;
 
+    display: flex;
 
+    flex-direction: column;
 
-/* Header Layout */
+    gap: var(--space-5);
 
-
-.app-header {
-
-
-    position:sticky;
-
-    top:0;
-
-
-    z-index:100;
-
+    padding-block: var(--space-5);
 
 }
-
-
-
-
 
 .header-content {
 
+    display: flex;
 
-    min-height:72px;
+    justify-content: space-between;
 
+    align-items: center;
 
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:space-between;
-
-
-    gap:
-    var(--space-4);
-
+    min-height: var(--header-height);
 
 }
-
-
-
-
-
-/* Main Content */
-
-
-main.container {
-
-
-    flex:1;
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    gap:
-    var(--space-7);
-
-
-    padding-block:
-    var(--space-7);
-
-
-}
-
-
-
-
-
-/* Hero Layout */
-
 
 .hero {
 
+    display: flex;
 
-    display:flex;
+    flex-direction: column;
 
-
-    flex-direction:column;
-
-
-    gap:
-    var(--space-3);
-
+    gap: var(--space-2);
 
 }
-
-
-
-
-
-/* Statistics Layout */
-
 
 .statistics {
 
+    display: grid;
 
-    display:grid;
+    grid-template-columns: repeat(4, 1fr);
 
-
-    grid-template-columns:
-    repeat(1,1fr);
-
-
-    gap:
-    var(--space-4);
-
+    gap: var(--space-3);
 
 }
-
-
-
-
-
-/* Form Layout */
-
 
 .task-form-section {
 
+    display: flex;
 
-    display:flex;
+    flex-direction: column;
 
-
-    flex-direction:column;
-
-
-    gap:
-    var(--space-5);
-
+    gap: var(--space-3);
 
 }
-
-
-
-
 
 #taskForm {
 
+    display: flex;
 
-    display:flex;
+    flex-direction: column;
 
-
-    flex-direction:column;
-
-
-    gap:
-    var(--space-4);
-
+    gap: var(--space-3);
 
 }
-
-
-
-
 
 .form-group {
 
+    display: flex;
 
-    display:flex;
+    flex-direction: column;
 
-
-    flex-direction:column;
-
-
-    gap:
-    var(--space-2);
-
+    gap: .5rem;
 
 }
-
-
-
-
 
 .form-row {
 
+    display: grid;
 
-    display:grid;
+    grid-template-columns: repeat(2, 1fr);
 
-
-    grid-template-columns:
-    1fr;
-
-
-    gap:
-    var(--space-4);
-
+    gap: var(--space-3);
 
 }
-
-
-
-
-
-/* Search Layout */
-
 
 .search-section {
 
-
-    width:100%;
-
+    display: flex;
 
 }
-
-
-
-
-
-/* Filter Layout */
-
 
 .filter-section {
 
+    display: flex;
 
-    display:flex;
+    flex-wrap: wrap;
 
-
-    flex-wrap:wrap;
-
-
-    gap:
-    var(--space-3);
-
+    gap: var(--space-2);
 
 }
-
-
-
-
-
-/* Task List Layout */
-
 
 .task-section {
 
+    display: flex;
 
-    width:100%;
-
+    flex-direction: column;
 
 }
-
-
-
-
 
 #taskList {
 
+    display: flex;
 
-    display:flex;
+    flex-direction: column;
 
-
-    flex-direction:column;
-
-
-    gap:
-    var(--space-4);
-
+    gap: var(--space-3);
 
 }
 
+.empty-state {
 
+    display: flex;
 
+    flex-direction: column;
 
+    justify-content: center;
 
-/* Footer Layout */
+    align-items: center;
 
+    text-align: center;
+
+    gap: var(--space-2);
+
+    min-height: 220px;
+
+}
 
 .app-footer {
 
-
-    margin-top:auto;
-
+    margin-top: auto;
 
 }
 
+@media (max-width: 992px) {
 
+    .statistics {
 
+        grid-template-columns: repeat(2, 1fr);
 
-
-/*
-Tablet Layout
-
-Improves spacing for larger screens.
-*/
-
-
-@media(min-width:768px){
-
-
-
-.container {
-
-    padding-inline:
-    var(--space-7);
+    }
 
 }
 
+@media (max-width: 768px) {
 
+    main {
 
+        gap: var(--space-4);
 
-.statistics {
+    }
 
+    .header-content {
 
-    grid-template-columns:
-    repeat(2,1fr);
+        flex-direction: column;
 
+        align-items: flex-start;
 
-}
+        gap: var(--space-3);
 
+        padding-block: var(--space-2);
 
+    }
 
+    .form-row {
 
-.form-row {
+        grid-template-columns: 1fr;
 
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-
-}
-
-
-
-}
-
-
-
-
-
-/*
-Desktop Layout
-
-Full application experience.
-*/
-
-
-@media(min-width:1024px){
-
-
-
-.statistics {
-
-
-    grid-template-columns:
-    repeat(4,1fr);
-
+    }
 
 }
 
+@media (max-width: 576px) {
 
+    .container {
 
-main.container {
+        width: min(100% - 1.25rem, var(--container-width));
 
+    }
 
-    padding-block:
-    var(--space-8);
+    .statistics {
 
+        grid-template-columns: 1fr;
 
-}
+    }
 
+    .filter-section {
 
+        justify-content: center;
+
+    }
 
 }

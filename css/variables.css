@@ -1,182 +1,165 @@
 /*
 TaskFlow Design Tokens
 
-All visual values are centralized here.
-Components should use these variables.
+This file defines the visual language of the application.
+
+Every other stylesheet should consume these variables.
 */
 
-
-:root,
-:root[data-theme="light"] {
-
+:root {
 
     /* Brand Colors */
 
-    --primary:#2563eb;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #dbeafe;
 
-    --primary-hover:#1d4ed8;
+    --secondary: #7c3aed;
+    --secondary-light: #ede9fe;
 
-    --secondary:#7c3aed;
+    --success: #16a34a;
+    --success-light: #dcfce7;
 
+    --warning: #f59e0b;
+    --warning-light: #fef3c7;
 
+    --danger: #dc2626;
+    --danger-light: #fee2e2;
 
-    /* Status Colors */
+    --info: #0891b2;
 
-    --success:#22c55e;
+    /* Neutral Colors */
 
-    --warning:#f59e0b;
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --surface-alt: #f1f5f9;
 
-    --danger:#ef4444;
+    --border: #e2e8f0;
 
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
 
+    /* Typography */
 
-    /* Background System */
+    --font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
-    --background:#f8fafc;
+    --font-size-xs: .75rem;
+    --font-size-sm: .875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.75rem;
 
-    --surface:#ffffff;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
 
-    --surface-hover:#f1f5f9;
+    --line-height: 1.6;
 
+    /* Spacing */
 
+    --space-1: .25rem;
+    --space-2: .5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+    --space-7: 4rem;
 
-    /* Text System */
+    /* Border Radius */
 
-    --text:#0f172a;
-
-    --text-light:#64748b;
-
-    --text-muted:#94a3b8;
-
-
-
-    /* Border */
-
-    --border:#e2e8f0;
-
-
+    --radius-sm: .5rem;
+    --radius-md: .75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-pill: 999px;
 
     /* Shadows */
 
     --shadow-sm:
-    0 1px 3px rgba(15,23,42,.08);
-
+        0 2px 8px rgba(15,23,42,.05);
 
     --shadow-md:
-    0 10px 25px rgba(15,23,42,.10);
-
+        0 10px 25px rgba(15,23,42,.08);
 
     --shadow-lg:
-    0 20px 40px rgba(15,23,42,.14);
+        0 20px 40px rgba(15,23,42,.12);
 
-
-
-    /* Border Radius */
-
-    --radius-sm:8px;
-
-    --radius-md:14px;
-
-    --radius-lg:22px;
-
-    --radius-xl:32px;
-
-
-
-    /* Spacing Scale */
-
-    --space-1:4px;
-
-    --space-2:8px;
-
-    --space-3:12px;
-
-    --space-4:16px;
-
-    --space-5:24px;
-
-    --space-6:32px;
-
-    --space-7:48px;
-
-    --space-8:64px;
-
-
-
-    /* Animation */
+    /* Transition */
 
     --transition-fast:
-    .2s ease;
+        .2s ease;
 
-
-    --transition:
-    .3s ease;
-
+    --transition-normal:
+        .3s ease;
 
     --transition-slow:
-    .5s ease;
-
-
+        .45s ease;
 
     /* Layout */
 
-    --container-width:
-    1200px;
+    --container-width: 1200px;
 
+    --header-height: 72px;
+
+    /* Z Index */
+
+    --z-dropdown: 100;
+    --z-sticky: 500;
+    --z-modal: 1000;
 
 }
 
-
-
-
-
 /*
-Dark Theme
+Dark Theme Tokens
 
-Activated by:
-
-<html data-theme="dark">
+These values automatically replace
+the root variables when the
+theme attribute becomes dark.
 */
 
+[data-theme="dark"] {
 
-:root[data-theme="dark"] {
+    --background: #0f172a;
 
+    --surface: #1e293b;
 
+    --surface-alt: #334155;
 
-    --background:#020617;
+    --border: #334155;
 
+    --text-primary: #f8fafc;
 
-    --surface:#0f172a;
+    --text-secondary: #cbd5e1;
 
+    --text-muted: #94a3b8;
 
-    --surface-hover:#1e293b;
+    --primary-light: rgba(37,99,235,.2);
 
+    --secondary-light: rgba(124,58,237,.2);
 
+    --success-light: rgba(22,163,74,.2);
 
-    --text:#f8fafc;
+    --warning-light: rgba(245,158,11,.2);
 
-
-    --text-light:#cbd5e1;
-
-
-    --text-muted:#94a3b8;
-
-
-
-    --border:#334155;
-
-
+    --danger-light: rgba(220,38,38,.2);
 
     --shadow-sm:
-    0 1px 3px rgba(0,0,0,.4);
-
+        0 2px 8px rgba(0,0,0,.30);
 
     --shadow-md:
-    0 10px 25px rgba(0,0,0,.45);
-
+        0 12px 30px rgba(0,0,0,.40);
 
     --shadow-lg:
-    0 20px 40px rgba(0,0,0,.6);
-
+        0 24px 48px rgba(0,0,0,.55);
 
 }
