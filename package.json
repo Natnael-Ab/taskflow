@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc -b --pretty false"
+    "typecheck": "tsc -b --pretty false",
+    "check:environment": "node scripts/verify-environment.mjs",
+    "preinstall": "node scripts/verify-environment.mjs",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "rebuild": "npm run clean && npm run build",
+    "verify": "npm run check:environment && npm run typecheck && npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,5 +37,10 @@
     "typescript": "^7.0.2",
     "vite": "^8.2.0"
   },
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">=24.17.0 <25",
+    "npm": ">=11 <12"
+  },
+  "packageManager": "npm@11.13.0"
 }
