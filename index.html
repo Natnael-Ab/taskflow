@@ -6,13 +6,32 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
+
+    <title>TaskFlow — Personal Execution Workspace</title>
+
     <meta
       name="description"
       content="TaskFlow is a focused personal execution workspace for realistic planning and meaningful progress."
     />
-    <meta name="theme-color" content="#eeece6" />
-    <title>TaskFlow</title>
+    <meta name="application-name" content="TaskFlow" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <meta
+      name="theme-color"
+      content="#eeece6"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111412"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

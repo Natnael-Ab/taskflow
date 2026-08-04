@@ -1,0 +1,38 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  role="img"
+  aria-labelledby="title description"
+>
+  <title id="title">TaskFlow</title>
+  <desc id="description">
+    A refined TaskFlow monogram formed from an open frame and directional path.
+  </desc>
+
+  <rect width="64" height="64" rx="14" fill="#1a211e" />
+
+  <path
+    d="M18 18h28"
+    fill="none"
+    stroke="#d8c39b"
+    stroke-linecap="round"
+    stroke-width="5"
+  />
+
+  <path
+    d="M32 18v28"
+    fill="none"
+    stroke="#8db0a7"
+    stroke-linecap="round"
+    stroke-width="5"
+  />
+
+  <path
+    d="m24 38 8 8 10-12"
+    fill="none"
+    stroke="#f3efe5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="5"
+  />
+</svg>

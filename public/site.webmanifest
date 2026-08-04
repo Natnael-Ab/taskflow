@@ -1,0 +1,19 @@
+{
+  "name": "TaskFlow",
+  "short_name": "TaskFlow",
+  "description": "A focused personal execution workspace for realistic planning and meaningful progress.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#eeece6",
+  "theme_color": "#1a211e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
