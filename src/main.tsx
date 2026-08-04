@@ -1,14 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import App from "./App";
-import "./index.css";
+import App from "@/app/App";
+import { invariant } from "@/lib/assertions/invariant";
+import "@/styles/global.css";
 
 const rootElement = document.getElementById("root");
 
-if (!rootElement) {
-  throw new Error("The application root element was not found.");
-}
+invariant(rootElement, "The application root element was not found.");
 
 createRoot(rootElement).render(
   <StrictMode>
